@@ -91,7 +91,9 @@ const showResult = () => {
   );
   const action = document.querySelector("#result-action");
   if (answers.next === "form") {
-    action.href = "https://jdhstudio.co/contact.html";
+    action.href = "contact.html";
+    action.removeAttribute("target");
+    action.removeAttribute("rel");
     action.innerHTML = "Continue to enquiry <span>↗</span>";
   } else {
     action.href = `https://wa.me/2348158535742?text=${message}`;
@@ -136,7 +138,18 @@ if (contactForm) {
     window.location.href = `mailto:jdhstudio.co@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     const note = document.querySelector("#form-note");
     note.hidden = false;
+    note.setAttribute("role", "status");
+    note.setAttribute("aria-live", "polite");
     note.textContent = "Your email app should open with the enquiry ready to send.";
   });
+}
+
+if (window.location.pathname.endsWith("/work.html")) {
+  const workIntro = document.querySelector(".page-hero p:not(.eyebrow)");
+  if (workIntro) {
+    workIntro.textContent = "A set of prototype directions showing how JDH Studio approaches brands, products, and the digital groundwork around them.";
+  }
+  const workEyebrow = document.querySelector(".page-hero .eyebrow");
+  if (workEyebrow) workEyebrow.lastChild.textContent = " 02 / Concept directions";
 }
 updateStep();
