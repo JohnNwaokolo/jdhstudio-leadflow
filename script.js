@@ -1,3 +1,6 @@
+const stylesheet = document.querySelector('link[href="styles.css"]');
+if (stylesheet) stylesheet.href = "styles.css?v=ab32f7c";
+
 const questions = [...document.querySelectorAll(".question")];
 const form = document.querySelector("#lead-form");
 const nextButton = document.querySelector("#next-button");
