@@ -1,5 +1,5 @@
 const stylesheet = document.querySelector('link[href="styles.css"]');
-if (stylesheet) stylesheet.href = "styles.css?v=ab32f7c";
+if (stylesheet) stylesheet.href = "styles.css?v=9b14a14";
 
 const questions = [...document.querySelectorAll(".question")];
 const form = document.querySelector("#lead-form");
